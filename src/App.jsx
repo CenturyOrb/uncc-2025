@@ -1,23 +1,20 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import MainLayout from './MainLayout';
+import NoLayout from './NoLayout';
 
-import LandingPage from './pages/landing-page/LandingPage.jsx'
-import LovePage from './pages/love-page/LovePage.jsx';
+import LandingPage from './pages/landing-page/LandingPage';
+import Dashboard from './pages/dashboard/Dashboard';
 
 function App() {
   	return (
-	<BrowserRouter>                                                 			
-    	{/*this should be the header instead of this nav i think */}
-      	<nav>
-        	<Link to="/">Logo</Link>
-			<Link to="/love">Hello</Link>
-	  	</nav>
-	                                                                 
+	<BrowserRouter>
       	<Routes>
-        	<Route path="/" element={<LandingPage />} />
-        	<Route path="/love" element={<LovePage />} />
-      	</Routes>
-    </BrowserRouter>
-
+        	<Route element={<NoLayout />}>
+          		<Route path="/" element={<LandingPage />} />
+				<Route path="/dashboard" element={<Dashboard />} />
+        	</Route>
+		</Routes>
+    </BrowserRouter>		
   	)
 }
 
