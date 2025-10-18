@@ -4,6 +4,7 @@ import NoLayout from './NoLayout';
 
 import LandingPage from './pages/landing-page/LandingPage';
 import Dashboard from './pages/dashboard/Dashboard';
+import Header from './components/header/Header';
 
 function App() {
   	return (
