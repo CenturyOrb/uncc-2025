@@ -12,7 +12,6 @@ function ChatBox() {
 
   return (
     <div className={styles.prompt_container}>
-      <h1>Chat With Us</h1>
       <textarea
         style={{ zIndex: "1000" }}
         name="text-box"

@@ -1,11 +1,81 @@
+.perspective {
+  perspective: 800px; /* controls strength of 3D */
+}
+
+.perspective {
+  .header_container {
+    position: sticky; top: 0; z-index: 50;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    padding: 2vh 7vw;
+
+    /* glass + depth */
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 16px;
+
+    /* layered shadows for 3D lift */
+    box-shadow:
+      0 20px 35px -20px rgba(0, 0, 0, 0.45),
+      0 2px 6px rgba(0, 0, 0, 0.12),
+      inset 0 1px 0 rgba(255,255,255,0.35);
+
+    /* 3D motion */
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    transition: transform .35s ease, box-shadow .35s ease;
+
+    nav {
+      display: flex;
+      gap: 1rem;
+
+      button {
+        padding: 0.7rem 1rem;
+        color: white;
+        background-color: rgb(1, 33, 105);
+        border-radius: 1rem;
+        border: none;
+
+        /* button “click” depth */
+        box-shadow:
+          0 6px 12px rgba(0,0,0,0.25),
+          inset 0 1px 0 rgba(255,255,255,0.25);
+        transform: translateZ(2px);
+        transition: transform .2s ease, box-shadow .2s ease;
+
+        &:hover { transform: translateZ(6px); }
+        &:active {
+          transform: translateZ(1px);
+          box-shadow:
+            0 3px 8px rgba(0,0,0,0.25),
+            inset 0 2px 4px rgba(0,0,0,0.25);
+        }
+      }
+    }
+  }
+}
+
+.perspective .header_container {
+  /* soft scroll-shadow to suggest separation */
+  box-shadow:
+    0 12px 25px -18px rgba(0,0,0,0.5),
+    0 1px 0 rgba(255,255,255,0.25) inset;
+}
+
 .header_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 10vh;
     padding: 0 7vw;
-    background-color: #FFFFFF;
-    border-bottom: 1px solid lightgray;
+    background-color: rgba(0, 0, 0, 0.1); /* transparent color */
+    backdrop-filter: blur(20px);
+    perspective: 800px;
 
     nav {
         display: flex;

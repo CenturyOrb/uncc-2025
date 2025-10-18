@@ -1,8 +1,9 @@
 import Header from "../../components/header/Header";
-import Content from "../../components/content/Content";
+import Content from "../../components/images/Images.jsx";
 import "./LandingPage.css";
 import ChatBox from "../../components/chat-box/ChatBox.jsx";
 import LearnlyPrompt from "../../components/learnly-prompt/LearnlyPrompt.jsx"
+import Images from "../../components/images/Images.jsx";
 
 
 const LandingPage = () => {
@@ -10,8 +11,9 @@ const LandingPage = () => {
 		<div className="landingpage_container">
 			<Header />
 			<div className="content_wrapper">
-				<Content />
+				<Images />
         <div className="box_overlay">
+          <h1>Helping you to reach higher goals</h1>
           <ChatBox />
         </div>
 			</div>
