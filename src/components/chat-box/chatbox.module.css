@@ -9,34 +9,29 @@
   border-radius: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.4);
 
-  /* frosted glass look (matching .main_subtitle) */
-  background: rgba(255, 255, 255, 0.45);
-  backdrop-filter: blur(14px) saturate(1.3);
-  -webkit-backdrop-filter: blur(14px) saturate(1.3);
-
-  /* light shadow and soft inner glow */
-  box-shadow:
-    0 4px 15px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-
   font-family: "Inria Serif", serif;
   color: black;
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.4);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.prompt_container:hover {
-  transform: scale(1.03); /* grows by 3% */
-  box-shadow:
-    0 6px 20px rgba(0, 0, 0, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+.prompt_container {
+  background: rgba(162, 162, 162, 0.761);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
 }
+
+.perspective .prompt_container {
+  background: rgba(162, 162, 162, 0.761);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+}
+
 
 .prompt_input {
 	width: 100%;
 	resize: none;
 	line-height: 1.7;
-	color: rgb(51, 56, 64);
+	color: rgb(255, 255, 255);
 	font-size: 1.1rem;
 }
 
