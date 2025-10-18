@@ -1,7 +1,7 @@
 import Header from "../../components/header/Header";
-import PageInfo from "../../components/pageinfo/PageInfo";
 import Content from "../../components/content/Content";
 import "./LandingPage.css";
+import ChatBox from "../../components/chat-box/ChatBox.jsx";
 
 
 const LandingPage = () => {
@@ -11,7 +11,7 @@ const LandingPage = () => {
 			<div className="content_wrapper">
 				<Content />
 				<div className="pageinfo_overlay">
-					<PageInfo />
+					<ChatBox />
 				</div>
 			</div>
 		</div>
