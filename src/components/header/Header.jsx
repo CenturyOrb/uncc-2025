@@ -6,7 +6,7 @@ function Header() {
 
   	return (
 		<div className={styles.header_container}>
-			<h1 style={{color: "orange"}}>LOGO</h1>
+			<h1 style={{color: "orange"}}>Learnly</h1>
 			<nav>
 				<Link to="/dashboard"><button>Go Landing Page</button></Link>
 				<Link to="/dashboard"><button>Go To Eric</button></Link>

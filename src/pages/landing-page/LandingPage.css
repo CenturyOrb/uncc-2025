@@ -15,12 +15,8 @@
 }
 
 /* Make PageInfo appear above Content */
-.pageinfo_overlay {
-  z-index: 10;
-  pointer-events: none; /* optional: allow clicks through */
-}
 
-.pageinfo_overlay {
+.box_overlay {
   display: flex;
   align-items: center;
   justify-content: center;

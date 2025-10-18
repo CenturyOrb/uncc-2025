@@ -1,13 +1,22 @@
 .prompt_container { 
 	display: flex;
 	flex-direction: column;
-	width: 50%;
-	height: 50%;
+	width: 60%;
+	height: 25%;
 	border-radius: 1rem;
 	border: 1px solid lightgrey;
 	padding: 1rem;
-	margin-top: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.715);
+  justify-content: center;
+  align-items: center;
 }
+
+h1 {
+  color: black;
+  margin-bottom: 5px;
+}
+
 
 .prompt_input {
 	width: 100%;
@@ -15,12 +24,12 @@
 	line-height: 1.7;
 	color: rgb(51, 56, 64);
 	font-size: 1.1rem;
+  padding: 20px;
 }
 
 .learn_button {
 	display: flex;	
 	align-items: center;
-
 	margin-top: 0.5rem;
 	padding: 0.8rem;
 	margin-left: auto;	

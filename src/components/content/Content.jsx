@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import ReactImage from '../../assets/react.svg'
-import ProfileImage from '../../assets/profile_image.jpg'
+import ProfileImage from '../../assets/Bob-Ross.jpg'
 import styles from './content.module.css';
 
 function Content() {
