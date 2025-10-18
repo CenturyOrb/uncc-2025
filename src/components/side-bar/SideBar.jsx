@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import styles from './sidebar.module.css'
 import { motion } from "motion/react"
-import { CgProfile } from "react-icons/cg"
+import { GoPerson } from "react-icons/go";
 
 const SideBar = ({navs, user}) => {
 	const [navData, setNavData] = useState(
-		navs.map((nav, index) => ({content: nav, highlighted: index === 0}))
+		navs.map((nav, index) => ({content: nav.content, highlighted: index === 0, icon: nav.icon}))
 	);
 	
 	const handleClick = (index) => { 
@@ -26,13 +26,14 @@ const SideBar = ({navs, user}) => {
 					key={index}
 					onClick={() => handleClick(index)}
 				>
+					{data.icon && <data.icon size={22} style={{marginRight: '0.5rem'}}/>}
 					{data.content}
 				</motion.li>
 			)}
 		</ul>
 		</div>
 		<div className={`${styles.user_info} ${styles.highlighted}`}>
-			<CgProfile size={22}/>
+			<GoPerson size={22}/>
 			{user}
 		</div>
 	</section>

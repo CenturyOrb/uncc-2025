@@ -1,0 +1,28 @@
+.status {
+	display: flex;
+	align-items: start;
+}
+
+.task { 
+	display: flex;
+	gap: 0.75rem;
+	padding: 0.5rem;
+	border: 1px solid lightgrey;
+	border-radius: 0.5rem;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.methods { 
+	margin-top: 0.75rem;
+	display: flex;
+	gap: 0.5rem;
+	button {
+		padding: 0.3rem 1rem;
+		background-color: #A7C957;
+		border-radius: 0.25rem;
+	}
+}
+
+.divider {
+	border: 1px solid lightgrey;
+}

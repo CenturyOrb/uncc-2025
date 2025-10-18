@@ -1,0 +1,39 @@
+.assistant_panel {
+	display: flex;	
+	flex-direction: column;
+
+	margin: 0.75rem;
+	padding: 1rem;
+	border: 1px solid purple;
+	border-radius: 1rem;
+	border: 1px solid lightgrey;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	flex: 1;
+	color: black;
+}
+
+.task_list { 
+	display: flex;	
+	flex-direction: column;
+	border-radius: 1rem;
+	height: 40%;
+	padding: 1rem;
+	
+	h1 {
+		font-size: 1.5rem;
+		
+	}
+	hr {
+		border: none;
+  		height: 2px;
+  		background-color: #ccc;
+  		margin: 1rem 0;
+	}
+}
+
+.tasks {
+	display: flex;	
+	flex-direction: column;
+	gap: 0.75rem;
+	overflow-y: auto;
+}
