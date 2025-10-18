@@ -1,15 +1,16 @@
 import styles from './header.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigation } from 'react-router-dom';
 
 
 function Header() {
+
   	return (
 		<div className={styles.header_container}>
 			<h1 style={{color: "orange"}}>LOGO</h1>
 			<nav>
-				<button><Link to="/dashboard">Go Landing Page</Link></button>
-				<button>Hello</button>
-				<button>Hello</button>
+				<Link to="/dashboard"><button>Go Landing Page</button></Link>
+				<Link to="/dashboard"><button>Go To Eric</button></Link>
+				<Link to="/dashboard"><button>Sign In</button></Link>
 			</nav>
 		</div>
   	)
