@@ -11,9 +11,8 @@
     height: 100px;
     object-fit: cover;
     border-radius: 25px;
-    
-}
 
+}
 
 .fade_in_3d {
   animation: fadeIn3D 8s cubic-bezier(0.22, 1, 0.36, 1) forwards;

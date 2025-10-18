@@ -5,7 +5,9 @@ function Header() {
   return (
     <div className={styles.perspective}>
       <div className={styles.header_container}>
-        <h1 style={{ color: "orange" }}>Learnly</h1>
+        <div className={styles.logo_background}>
+          <h1>LOGO</h1>
+        </div>
         <nav>
           <Link to="/dashboard">
             <button>Go Landing Page</button>
