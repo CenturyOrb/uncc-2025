@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from './assistantpanel.module.css'
+import { motion } from "motion/react"
 
 import { GrCheckboxSelected } from "react-icons/gr";
 import { GrCheckbox } from "react-icons/gr";
@@ -10,7 +11,7 @@ const AssistantPanel = () => {
 	const [tasks, setTasks] = useState([
 		{name: 'Learn HTML', 
 		methods: ['Audio', 'Text'],
-		status: GrCheckbox
+		status: GrCheckboxSelected
 		}, 
 		{name: 'Learn CSS', 
 		methods: ['Text'],
@@ -18,11 +19,11 @@ const AssistantPanel = () => {
 		}, 
 		{name: 'Learn JS',
 		methods: ['Text', 'Video'],
-		status: GrCheckboxSelected
+		status: GrCheckbox
 		},
 		{name: 'Learn React basics', 		
         methods: ['Text'],
-		status: GrCheckboxSelected
+		status: GrCheckbox
         }, 
 		{name: 'First Reactjs Project!', 
         methods: ['Text'],
@@ -35,7 +36,12 @@ const AssistantPanel = () => {
 	]);	
 
 	return(
-		<aside className={styles.assistant_panel}>
+		<motion.aside 	
+			initial={{ x: '100%' }}
+      		animate={{ x: 0 }}
+      		transition={{type: 'spring', stiffness: 50}}
+			className={styles.assistant_panel}
+		>
 			<div className={styles.task_list}>
 				<h1>Tasks</h1>
 				<hr/>
@@ -49,7 +55,7 @@ const AssistantPanel = () => {
 				</div>
 			</div>
 			<LearnlyPrompt />
-		</aside>
+		</motion.aside>
 	);
 }
 
