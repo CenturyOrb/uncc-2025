@@ -1,0 +1,21 @@
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 10px solid red;
+    height: 10vh;
+    padding: 0 7vw;
+    background-color: #FFFFFF;
+    
+    nav {
+        display: flex;
+        gap: 1rem;
+
+        button {
+            padding: 0.7rem 1rem;
+            color: white;
+            background-color: rgb(1, 33, 105);
+            border-radius: 1rem;
+        }
+    }
+}
