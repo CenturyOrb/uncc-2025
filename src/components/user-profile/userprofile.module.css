@@ -1,0 +1,40 @@
+.user_profile { 
+	display: flex;	
+	gap: 1rem;
+
+	border: 1px solid lightgrey;
+	border-radius: 1rem;
+	padding: 1.5rem;
+	flex: 1.5;
+	
+	div { 
+		color: black;
+		flex: 1;
+	}
+}
+
+.user_img {
+	width: 30%;
+	aspect-ratio: 1 / 1;
+	border-radius: 5rem;
+	border: 5px solid #A7C957;
+}
+
+.user_body { 
+	display: flex;
+	flex-direction: column;
+
+	margin-top: 0.5rem;
+	justify-content: space-between;
+	flex: auto;
+}
+
+.lala { 
+	display: flex;
+	flex-direction: column;
+}
+
+.story { 
+	font-size: 2rem;
+	margin-bottom: 0.2rem;
+}

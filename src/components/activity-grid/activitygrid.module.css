@@ -1,0 +1,7 @@
+.activity_grid {
+	flex: 2;
+	max-width: 66%;
+	border: 1px solid lightgrey;
+	border-radius: 1rem;        
+	padding: 1.5rem;
+}
