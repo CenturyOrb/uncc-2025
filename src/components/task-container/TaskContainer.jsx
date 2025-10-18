@@ -1,7 +1,6 @@
 import styles from './taskcontainer.module.css'
 
 const TaskContainer = ({task}) => {
-	console.log(task);
 	return (
 		<div className={styles.task}>
 			<div className={styles.status}>

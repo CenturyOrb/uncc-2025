@@ -1,0 +1,30 @@
+.prompt_container { 
+	display: flex;
+	flex-direction: column;
+
+	border-radius: 1rem;
+	border: 1px solid lightgrey;
+	padding: 1rem;
+	margin-top: auto;
+}
+
+.prompt_input {
+	width: 100%;
+	resize: none;
+	line-height: 1.7;
+	color: rgb(51, 56, 64);
+	font-size: 1.1rem;
+}
+
+.learn_button {
+	display: flex;	
+	align-items: center;
+
+	margin-top: 1rem;
+	padding: 0.75rem;
+	margin-left: auto;	
+	border: 1px solid black;
+	border-radius: 2rem;
+	background-color: rgb(24, 29, 38);	
+	color: white;
+}

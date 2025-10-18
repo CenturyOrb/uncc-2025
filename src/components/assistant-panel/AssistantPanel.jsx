@@ -4,6 +4,7 @@ import styles from './assistantpanel.module.css'
 import { GrCheckboxSelected } from "react-icons/gr";
 import { GrCheckbox } from "react-icons/gr";
 import TaskContainer from '../task-container/TaskContainer.jsx'
+import LearnlyPrompt from '../learnly-prompt/LearnlyPrompt.jsx'
 
 const AssistantPanel = () => { 
 	const [tasks, setTasks] = useState([
@@ -47,6 +48,7 @@ const AssistantPanel = () => {
 					)}
 				</div>
 			</div>
+			<LearnlyPrompt />
 		</aside>
 	);
 }
