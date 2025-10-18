@@ -6,6 +6,7 @@ import { SiWolframmathematica } from "react-icons/si";
 import { FaJava, FaPython, FaLinux } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { LiaRaspberryPi } from "react-icons/lia";
+import { GiChemicalDrop } from "react-icons/gi";
 import styles from "./images.module.css";
 
 export default function ImageCloud() {
@@ -20,7 +21,8 @@ export default function ImageCloud() {
       "IoLogoJavascript",
       "FaPython",
       "LiaRaspberryPi",
-      "FaLinux"
+      "FaLinux",
+      "GiChemicalDrop"
     ]
   );
   const [imageArray, setImageArray] = useState(Array(NUMBER_OF_IMAGES).fill(null));
@@ -37,7 +39,8 @@ export default function ImageCloud() {
       IoLogoJavascript,
       FaPython,
       LiaRaspberryPi,
-      FaLinux
+      FaLinux,
+      GiChemicalDrop
     }),
     []
   );

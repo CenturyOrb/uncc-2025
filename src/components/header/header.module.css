@@ -17,10 +17,9 @@
   padding: 2vh 7vw;
 
   /* brighter, glassier effect */
-  background: rgba(162, 162, 162, 0.761);
+  background: rgba(255, 255, 255, 0.386);
   backdrop-filter: blur(16px) saturate(1.4);
   -webkit-backdrop-filter: blur(16px) saturate(1.4);
-  border-radius: 16px;
 
   transform-style: preserve-3d;
   transform: translateZ(0);
@@ -31,8 +30,8 @@
 /* buttons inside nav */
 .perspective .header_container nav button {
   padding: 0.7rem 1rem;
-  color: white;
-  background-color: rgb(188, 71, 73);
+  color: rgb(80, 80, 80);
+  background-color: rgba(255, 255, 255, 0);
   border-radius: 1rem;
   border: none;
 
@@ -49,12 +48,11 @@
   justify-content: space-between;
   align-items: center;
   height: auto;
-  padding: 0 7vw;
 
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(22px) saturate(1.4);
   -webkit-backdrop-filter: blur(22px) saturate(1.4);
-  border-radius: 16px;
+
   box-shadow:
     0 8px 20px -15px rgba(0, 0, 0, 0.25),
     inset 0 1px 0 rgba(255, 255, 255, 0.35);
@@ -70,7 +68,7 @@
   padding: 0.7rem 1.2rem;
   border-radius: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.35);
-  background: rgba(1, 33, 105, 0.75); /* translucent navy */
+  background: rgba(255, 255, 255, 0.515);
   backdrop-filter: blur(10px) saturate(1.3);
   -webkit-backdrop-filter: blur(10px) saturate(1.3);
 
@@ -110,7 +108,7 @@
   width: 70px;
   height: 70px;
   border-radius: 50%;
-  background-color: rgb(188, 71, 73); /* deep blue, slightly transparent */
+  background-color: rgba(188, 71, 73, 0); /* deep blue, slightly transparent */
   color: white;
   font-size: 2.5rem;
 
