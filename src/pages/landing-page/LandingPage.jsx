@@ -4,13 +4,15 @@ import Content from "../../components/content/Content";
 import "./LandingPage.css";
 
 
-const LandingPage = () => { 
-	return(
+const LandingPage = () => {
+	return (
 		<div className="landingpage_container">
 			<Header />
 			<div className="content_wrapper">
 				<Content />
-				<PageInfo />
+				<div className="pageinfo_overlay">
+					<PageInfo />
+				</div>
 			</div>
 		</div>
 	);
