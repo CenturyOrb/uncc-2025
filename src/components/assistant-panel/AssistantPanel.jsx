@@ -32,8 +32,30 @@ const AssistantPanel = () => {
 		{name: 'Database?', 
         methods: ['Text'],
 		status: GrCheckboxSelected
-        }
+        },
+		{name: 'Database?',       	
+        methods: ['Text'],
+        status: GrCheckboxSelected
+		},
+		{name: 'Database?', 
+        methods: ['Text'],
+        status: GrCheckboxSelected
+		},
+		{name: 'Database?',       		
+	    methods: ['Text'],
+        status: GrCheckboxSelected
+		}
 	]);	
+
+	const week_display = [
+		{day: 'Sun', date: 19},
+		{day: 'Mon', date: 20},
+		{day: 'Tue', date: 21},
+		{day: 'Wed', date: 22},
+		{day: 'Thu', date: 23},
+		{day: 'Fri', date: 24},
+		{day: 'Sat', date: 25},
+	];
 
 	return(
 		<motion.aside 	
@@ -42,18 +64,24 @@ const AssistantPanel = () => {
       		transition={{type: 'spring', stiffness: 50}}
 			className={styles.assistant_panel}
 		>
-			<div className={styles.task_list}>
-				<h1>Tasks</h1>
-				<hr/>
-				<div className={styles.tasks}>
-					{tasks.map((task, index) => 
-						(<TaskContainer 
-							key={index} 
-							task={task}
-						/>)
-					)}
-				</div>
+			{/* week display */}
+			<div className={styles.week}> 
+				{week_display.map((dayObj, index) => 
+					<div key={index}>
+						<p style={{textAlign: 'center', marginBottom: '0.5rem'}}>{dayObj.day}</p>
+						<p style={{textAlign: 'center'}}>{dayObj.date}</p>
+					</div>
+				)}				
 			</div>
+			
+			{/* task list */}
+			<div className={styles.task_list}>
+				{tasks.map((task, index) => 
+					<TaskContainer task={task} key={index}/>
+				)}
+			</div>
+	
+			{/* learnly prompt */}
 			<LearnlyPrompt />
 		</motion.aside>
 	);

@@ -3,8 +3,7 @@ import Content from "../../components/images/Images.jsx";
 import "./LandingPage.css";
 import ChatBox from "../../components/chat-box/ChatBox.jsx";
 import Images from "../../components/images/Images.jsx";
-import Title from "../../components/title-component/title.jsx";
-
+import Title from "../../components/title-component/Title.jsx";
 
 const LandingPage = () => {
 	return (
@@ -13,8 +12,8 @@ const LandingPage = () => {
 			<div className="content_wrapper">
 				<Images />
         <div className="box_overlay">
-          <Title />
-          <ChatBox />
+			<Title />	
+          	<ChatBox />
         </div>
 			</div>
 		</div>

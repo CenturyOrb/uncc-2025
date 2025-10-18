@@ -3,18 +3,13 @@ import styles from './taskcontainer.module.css'
 const TaskContainer = ({task}) => {
 	return (
 		<div className={styles.task}>
-			<div className={styles.status}>
-				{task.status && <task.status size={22} />}	
+			<div className={styles.bar}> 			
 			</div>
-			<div className={styles.divider}>
-			</div>
-			<div>
-				{task.name}	
+			<div className={styles.task_info}>
+				{task.name}
 				<div className={styles.methods}>
-					{task.methods.map((method, index) =>
-						<button key={index}>
-							{method}
-						</button>
+					{task.methods.map((method, index) => 
+						<p key={index}>{method}</p>
 					)}
 				</div>
 			</div>

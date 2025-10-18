@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './title.module.css';
 
-function title() {
+function Title() {
   return (
     <div className={styles.title_container}>
       <h1 style={{ fontSize: "5rem" }} className={styles.main_title}>
@@ -12,4 +12,4 @@ function title() {
   );
 }
 
-export default title;
+export default Title;
