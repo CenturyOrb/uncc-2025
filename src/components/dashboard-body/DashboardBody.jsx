@@ -27,6 +27,8 @@ const DashboardBody = () => {
 				{/* add github activity grid thingie here */}
 				<ActivityGrid />
 			</section>
+			<section>
+			</section>
 		</main>
 	);
 }

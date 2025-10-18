@@ -12,12 +12,6 @@
   align-items: center;
 }
 
-h1 {
-  color: black;
-  margin-bottom: 5px;
-}
-
-
 .prompt_input {
 	width: 100%;
 	resize: none;
