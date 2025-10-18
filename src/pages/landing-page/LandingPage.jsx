@@ -1,13 +1,8 @@
-import { Link } from 'react-router-dom';
-
-import Dashboard from '../dashboard/Dashboard.jsx'
+import Header from "../../components/header/Header";
 
 const LandingPage = () => { 
 	return(
-	<>
-		<p>hello world</p>
-		<Link to="/dashboard">Go to Dashboard</Link>
-	</>
+		<Header />
 	);
 }
 
