@@ -7,7 +7,7 @@ function Header() {
 		<div className={styles.header_container}>
 			<h1 style={{color: "orange"}}>LOGO</h1>
 			<nav>
-				<button><Link to="/dashboard">Go Landing Page</Link></button>
+				<Link to="/dashboard"><button>Go Landing Page</button></Link>
 				<button>Hello</button>
 				<button>Hello</button>
 			</nav>
