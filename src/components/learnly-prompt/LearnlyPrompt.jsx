@@ -5,9 +5,7 @@ import { MdLightbulbOutline } from "react-icons/md";
 
 const LearnlyPrompt = () => { 
 	return(
-		<div 
-			className={styles.prompt_container}
-		>
+		<div className={styles.prompt_container}>
 			<textarea 
 				className={styles.prompt_input} 
 				rows={3}

@@ -9,6 +9,7 @@
 .image_container {
     width: 100px;
     height: 100px;
+    object-fit: cover;
     border: 5px solid lightgray;
     border-radius: 25px;
 }

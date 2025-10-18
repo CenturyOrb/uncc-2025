@@ -2,10 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 10px solid red;
     height: 10vh;
     padding: 0 7vw;
     background-color: #FFFFFF;
+    border-bottom: 1px solid lightgray;
 
     nav {
         display: flex;
