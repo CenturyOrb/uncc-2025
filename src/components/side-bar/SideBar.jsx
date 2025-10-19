@@ -45,7 +45,7 @@ const SideBar = ({navs}) => {
 		// switch out items in the dashboard main	
 		if (clickedIndex === 1) { 
 			setLearning(true);	
-		}
+		} else (setLearning(false));
 	};
 
 	return(

@@ -68,6 +68,11 @@
   outline: none;
 }
 
+.prompt_input::placeholder {
+  color: #FFFFFF; 
+	opacity: 1;
+}
+
 .learn_button {
 	display: flex;	
 	align-items: center;

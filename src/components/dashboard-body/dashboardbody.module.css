@@ -31,3 +31,10 @@
 	display: flex;
 	gap: 1rem;
 }	
+
+.md { 
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	height: 100%;
+}

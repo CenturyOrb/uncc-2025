@@ -16,7 +16,10 @@ const DashboardBody = () => {
 	
 	const render = learning
 		? (
-			<MarkdownViewer content={slide}/>	
+			<div className={styles.md}>
+				<MarkdownViewer content={slide}/>	
+				<LearnlyPrompt/>
+			</div>
 		)	
 		: (
 		<>
