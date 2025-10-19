@@ -12,9 +12,10 @@ export const UserContext = createContext();
 function App() {
 	const [user, setUser] = useState(null);
 	const [messages, setMessages] = useState([]);
+	const [learning, setLearning] = useState(false);
 	
   	return (
-	<UserContext.Provider value={{user, setUser, messages, setMessages}}> 
+	<UserContext.Provider value={{user, setUser, messages, setMessages, learning, setLearning}}> 
 	<BrowserRouter>
       	<Routes>
         	<Route element={<NoLayout />}>

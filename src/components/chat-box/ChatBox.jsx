@@ -6,10 +6,6 @@ import { motion } from "motion/react"
 function ChatBox() {
   const [prompt, setPrompt] = useState("");
 
-  useEffect(() => {
-    console.log(`prompt: ${prompt}`);
-  }, [prompt]);
-
   return (
     <div className={styles.prompt_container}>
       <textarea

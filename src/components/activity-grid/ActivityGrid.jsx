@@ -8,10 +8,6 @@ const ActivityGrid = () => {
     )
   );
 
-  useEffect(() => {
-    console.log(activityData);
-  }, [activityData]); // <- dependency array
-
   const levelColors = ["#ebedf0", "#c6e48b", "#7bc96f", "#239a3b", "#196127"];
 
   return (

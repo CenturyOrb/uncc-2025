@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useState, useEffect, useContext} from 'react'
 import styles from './sidebar.module.css'
 import { motion } from "motion/react"
@@ -11,7 +12,7 @@ const SideBar = ({navs}) => {
 		navs.map((nav, index) => ({content: nav.content, highlighted: index === 0, icon: nav.icon}))
 	);
 
-	const { user, setUser } = useContext(UserContext);
+	const { user, setUser, learning, setLearning } = useContext(UserContext);
     const [userProfile, setUserProfile] = useState({
     	auth_id: 'ex',
     	user_name: "ex",
@@ -34,11 +35,18 @@ const SideBar = ({navs}) => {
     }, []);		
 
     
-	const handleClick = (index) => { 
-		setNavData(prevNavData => prevNavData.map(data => {
-			return {...data, highlighted: !data.highlighted }
-		}))
-	}
+	const handleClick = (clickedIndex) => {
+  		setNavData(prevNavData =>
+    		prevNavData.map((data, index) => ({
+      			...data,
+      			highlighted: index === clickedIndex
+    		}))
+  		);
+		// switch out items in the dashboard main	
+		if (clickedIndex === 1) { 
+			setLearning(true);	
+		}
+	};
 
 	return(
 	<section className={styles.side_bar}>

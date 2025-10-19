@@ -13,10 +13,6 @@ const AssistantPanel = () => {
 	const [tasks, setTasks] = useState([]);	
 	const { user } = useContext(UserContext);
 
-	useEffect(() => { 
-		console.log(tasks);
-	}, [tasks]);
-
 	useEffect(() => {                                                                                              	
     	// call backend for user info /tasks/:id
     	const fetchData = async () => {

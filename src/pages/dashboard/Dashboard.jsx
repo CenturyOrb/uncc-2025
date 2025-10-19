@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import styles from './dashboard.module.css'
 import { LuLayoutDashboard } from "react-icons/lu";
 import { HiOutlineCog6Tooth } from "react-icons/hi2";
+import { IoBookOutline } from "react-icons/io5";
 
 import SideBar from '../../components/side-bar/SideBar.jsx'
 import DashboardBody from '../../components/dashboard-body/DashboardBody.jsx'
@@ -16,7 +17,11 @@ const Dashboard = () => {
 
 	return(
 	<section style={style}>
-		<SideBar user={'Lewy'} navs={[{content: 'Dashboard', icon: LuLayoutDashboard}, {content: 'Setting', icon: HiOutlineCog6Tooth}]}/>	
+		<SideBar user={'Lewy'} navs={[
+			{content: 'Dashboard', icon: LuLayoutDashboard}, 
+			{content: 'Learn', icon: IoBookOutline}, 
+			{content: 'Setting', icon: HiOutlineCog6Tooth},
+		]}/>	
 		<DashboardBody />
 		<AssistantPanel />
 	</section>
