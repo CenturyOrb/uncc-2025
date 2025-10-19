@@ -10,8 +10,7 @@ import axios from 'axios'
 import { UserContext } from '../../App.jsx'
 
 const AssistantPanel = () => { 
-	const [tasks, setTasks] = useState([]);	
-	const { user } = useContext(UserContext);
+	const { user, tasks, setTasks } = useContext(UserContext);
 
 	useEffect(() => {                                                                                              	
     	// call backend for user info /tasks/:id
@@ -20,9 +19,9 @@ const AssistantPanel = () => {
         		const response = await axios(`https://reviewless-mallie-conchal.ngrok-free.dev/tasks?user_id=${user.uid}`);
 				const newTasks = response.data.map(item => {
 					const methods = [];
-				  	if (item.method_text) methods.push('text');
-				  	if (item.method_audio) methods.push('audio');
-				  	if (item.method_video) methods.push('video');
+				  	if (Math.random() < 0.9) methods.push('text');
+				  	if (Math.random() < 0.4) methods.push('audio');
+				  	if (Math.random() < 0.4) methods.push('video');
 				
 				  	return {
 				  	  task: item.task,

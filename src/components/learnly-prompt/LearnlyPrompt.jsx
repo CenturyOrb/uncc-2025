@@ -7,7 +7,7 @@ import axios from 'axios'
 import { UserContext } from '../../App.jsx'
 
 const LearnlyPrompt = () => { 
-	const { user, setUser, messages, setMessages } = useContext(UserContext);
+	const { user, setUser, messages, setMessages, setSlide, setTasks} = useContext(UserContext);
 	const [promptInput, setPromptInput] = useState('');
 
 	const handleSubmitEnter = async (e) => { 
@@ -23,7 +23,23 @@ const LearnlyPrompt = () => {
 
 			let response = await axios.post('https://reviewless-mallie-conchal.ngrok-free.dev/comment', body);
 			response = await axios.post('https://thu-overbumptious-sana.ngrok-free.dev/resources/run', body);
-			
+			if(response.data.workflow_response.slides) setSlide(response.data.workflow_response.slides);
+			console.log(response.data.workflow_response.slides);
+
+            	response = await axios(`https://reviewless-mallie-conchal.ngrok-free.dev/tasks?user_id=${user.uid}`);
+            	const newTasks = response.data.map(item => {
+            		const methods = [];
+            	  	if (Math.random() < 0.4) methods.push('text');
+            	  	if (Math.random() < 0.8) methods.push('audio');
+            	  	if (Math.random() < 0.4) methods.push('video');
+            	
+            	  	return {
+            	  	  task: item.task,
+            	  	  methods: methods,
+            		  complete: item.complete,
+            	  	};
+            	});
+            	setTasks(newTasks);	
 			
 			// update the messages after
 			response = await axios.get(`https://reviewless-mallie-conchal.ngrok-free.dev/comment?user_id=${user.uid}`);	

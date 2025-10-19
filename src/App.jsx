@@ -14,9 +14,10 @@ function App() {
 	const [messages, setMessages] = useState([]);
 	const [learning, setLearning] = useState(false);
 	const [slide, setSlide] = useState('');
+	const [tasks, setTasks] = useState([]);	
 	
   	return (
-		<UserContext.Provider value={{user, setUser, messages, setMessages, learning, setLearning, slide, setSlide}}> 
+		<UserContext.Provider value={{user, setUser, messages, setMessages, learning, setLearning, slide, setSlide, tasks, setTasks}}> 
 		<BrowserRouter>
     	  	<Routes>
     	    	<Route element={<NoLayout />}>
