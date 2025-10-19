@@ -5,6 +5,7 @@ import { IoSearchOutline } from "react-icons/io5"
 import UserProfile from '../user-profile/UserProfile.jsx'
 import ActivityGrid from '../activity-grid/ActivityGrid.jsx'
 import LearnlyPrompt from '../learnly-prompt/LearnlyPrompt.jsx'
+import ChatDisplay from '../chat-display/ChatDisplay.jsx'
 
 const DashboardBody = () => { 
 	const [taskValue, setTaskValue] = useState('');
@@ -28,6 +29,7 @@ const DashboardBody = () => {
 				{/* add github activity grid thingie here */}
 				<ActivityGrid />
 			</section>
+      <ChatDisplay />
 			<section style={{marginTop: 'auto'}}>
 				<LearnlyPrompt />
 			</section>
