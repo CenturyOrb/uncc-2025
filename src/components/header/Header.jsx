@@ -11,12 +11,6 @@ function Header() {
         </div>
         <nav>
           <Link to="/dashboard">
-            <button>Go Landing Page</button>
-          </Link>
-          <Link to="/dashboard">
-            <button>Go To Eric</button>
-          </Link>
-          <Link to="/dashboard">
             <button>Sign In</button>
           </Link>
         </nav>
