@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import styles from "./header.module.css";
+import axios from 'axios'
 import { Link, useNavigation, useNavigate } from "react-router-dom";
 import { FaRocketchat } from "react-icons/fa";
 import { FirebaeAuth } from '../../firebase/firebase-config.js'
@@ -19,6 +20,12 @@ function Header() {
 	const handleLogin = async () => { 
 		try {
 			const gCredential = await signInWithPopup(FirebaeAuth, googleProvider);
+			const body = { 
+				auth_id: gCredential.user.uid,
+				user_name: gCredential.user.displayName
+			};
+			
+			const response = await axios.post('https://reviewless-mallie-conchal.ngrok-free.dev/add-user', body);	
 			if (gCredential.user.uid) {
 				navigate('/dashboard');
 			}
