@@ -40,7 +40,7 @@ function Header() {
   	        <FaRocketchat />
   	      </div>
   	      <nav>
-  	          	<button
+  	     		<button
 					onClick={handleLogin}
 				>
 					Sign In
