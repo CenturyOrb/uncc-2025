@@ -5,7 +5,6 @@ import { motion } from "motion/react"
 import { GrCheckboxSelected } from "react-icons/gr";
 import { GrCheckbox } from "react-icons/gr";
 import TaskContainer from '../task-container/TaskContainer.jsx'
-import LearnlyPrompt from '../learnly-prompt/LearnlyPrompt.jsx'
 
 const AssistantPanel = () => { 
 	const [tasks, setTasks] = useState([
@@ -44,7 +43,11 @@ const AssistantPanel = () => {
 		{name: 'Database?',       		
 	    methods: ['Text'],
         status: GrCheckboxSelected
-		}
+		},
+		{name: 'Database?',       		
+        methods: ['Text'],
+        status: GrCheckboxSelected
+        }
 	]);	
 
 	const week_display = [
@@ -64,6 +67,8 @@ const AssistantPanel = () => {
       		transition={{type: 'spring', stiffness: 50}}
 			className={styles.assistant_panel}
 		>
+			<h1 style={{fontSize: '1.5rem'}}>Learning Tasks</h1>
+			<hr/>
 			{/* week display */}
 			<div className={styles.week}> 
 				{week_display.map((dayObj, index) => 
@@ -82,7 +87,6 @@ const AssistantPanel = () => {
 			</div>
 	
 			{/* learnly prompt */}
-			<LearnlyPrompt />
 		</motion.aside>
 	);
 }

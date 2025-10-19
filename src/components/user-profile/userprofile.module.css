@@ -14,8 +14,8 @@
 }
 
 .user_img {
-	width: 30%;
-	aspect-ratio: 1 / 1;
+	width: 8rem;
+	height: 8rem;
 	border-radius: 5rem;
 	border: 5px solid #A7C957;
 }

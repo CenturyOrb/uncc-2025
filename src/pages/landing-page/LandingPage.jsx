@@ -4,7 +4,7 @@ import "./LandingPage.css";
 import ChatBox from "../../components/chat-box/ChatBox.jsx";
 import Images from "../../components/images/Images.jsx";
 import OnboardingModal from "../../components/onboaring-modal/OnboaringModal.jsx";
-import Title from "../../components/title-component/title.jsx";
+import Title from '../../components/title-component/Title.jsx';
 
 const LandingPage = () => {
   return (
