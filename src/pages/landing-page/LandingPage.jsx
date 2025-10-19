@@ -3,9 +3,8 @@ import Content from "../../components/images/Images.jsx";
 import "./LandingPage.css";
 import ChatBox from "../../components/chat-box/ChatBox.jsx";
 import Images from "../../components/images/Images.jsx";
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-import Title from "../../components/title-component/Title.jsx";
+import Title from "../../components/title-component/title.jsx";
+import OnboardingModal from "../../components/onboaring-modal/OnboaringModal.jsx";
 
 const LandingPage = () => {
 	return (
