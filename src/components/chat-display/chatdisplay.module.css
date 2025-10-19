@@ -29,16 +29,16 @@
 }
 
 /* User message (right side) */
-.user_message {
-  align-self: flex-end;
+.other_message {
+  align-self: flex-start;
   background-color: #e5e5ea;
   color: #000;
   border-bottom-right-radius: 4px;
 }
 
 /* Chatbot / other message (left side) */
-.other_message {
-  align-self: flex-start;
+.user_message {
+  align-self: flex-end;
   background-color: #6a994e;
   color: #fff;
   border-bottom-left-radius: 4px;

@@ -15,15 +15,15 @@ const LearnlyPrompt = () => {
 			e.preventDefault();
 			setPromptInput('');
 			// send to AI
-			
-			
-			// update database new user message
 			const body = { 
-				user_id: user.uid,
-				content: promptInput,
-				from_user: true
-			}
+            	user_id: user.uid,
+            	content: promptInput,
+            	from_user: true
+		    }
+
 			let response = await axios.post('https://reviewless-mallie-conchal.ngrok-free.dev/comment', body);
+			response = await axios.post('https://thu-overbumptious-sana.ngrok-free.dev/resources/run', body);
+			
 			
 			// update the messages after
 			response = await axios.get(`https://reviewless-mallie-conchal.ngrok-free.dev/comment?user_id=${user.uid}`);	

@@ -13,18 +13,19 @@ function App() {
 	const [user, setUser] = useState(null);
 	const [messages, setMessages] = useState([]);
 	const [learning, setLearning] = useState(false);
+	const [slide, setSlide] = useState('');
 	
   	return (
-	<UserContext.Provider value={{user, setUser, messages, setMessages, learning, setLearning}}> 
-	<BrowserRouter>
-      	<Routes>
-        	<Route element={<NoLayout />}>
-          		<Route path="/" element={<LandingPage />} />
-				<Route path="/dashboard" element={<Dashboard />} />
-        	</Route>
-		</Routes>
-    </BrowserRouter>		
-	</UserContext.Provider >
+		<UserContext.Provider value={{user, setUser, messages, setMessages, learning, setLearning, slide, setSlide}}> 
+		<BrowserRouter>
+    	  	<Routes>
+    	    	<Route element={<NoLayout />}>
+    	      		<Route path="/" element={<LandingPage />} />
+					<Route path="/dashboard" element={<Dashboard />} />
+    	    	</Route>
+			</Routes>
+    	</BrowserRouter>		
+		</UserContext.Provider >
   	);
 }
 

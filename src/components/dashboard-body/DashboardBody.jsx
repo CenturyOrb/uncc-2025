@@ -12,30 +12,11 @@ import { UserContext } from '../../App.jsx'
 
 const DashboardBody = () => { 
 	const [taskValue, setTaskValue] = useState('');
-	const {learning, setLearning} = useContext(UserContext);
-	
-	const md = `
-	# Setup
-	
-	1. Go to project directory  
-	2. Run \`git init\` — initialize Git repository
-	
-	# Common Commands
-	
-	- \`git add .\` — stage all files  
-	- \`git commit -m "<description>"\` — save staged files with a message  
-	- \`git log\` — view commit history  
-	- \`git checkout <commit-id>\` — switch to a specific commit  
-	- \`git remote add <alias> <repo-url>\` — connect local repo to remote  
-	- \`git push -u <alias> <branch>\` — push commits to remote  
-	- \`git checkout -b <branch-name>\` — create and switch to new branch  
-	- \`git branch\` — list branches  
-	- \`git pull <alias> <branch>\` — pull updates from remote  
-	`;
+	const {learning, setLearning, slide} = useContext(UserContext);
 	
 	const render = learning
 		? (
-			<MarkdownViewer content={md}/>	
+			<MarkdownViewer content={slide}/>	
 		)	
 		: (
 		<>
