@@ -4,6 +4,7 @@ import "./LandingPage.css";
 import ChatBox from "../../components/chat-box/ChatBox.jsx";
 import Images from "../../components/images/Images.jsx";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 import Title from "../../components/title-component/Title.jsx";
 
 const LandingPage = () => {
@@ -20,6 +21,12 @@ import Title from "../../components/title-component/title.jsx";
 import OnboardingModal from "../../components/onboaring-modal/OnboaringModal.jsx";
 
 const LandingPage = () => {
+=======
+import Title from "../../components/title-component/title.jsx";
+import OnboardingModal from "../../components/onboaring-modal/OnboaringModal.jsx";
+
+const LandingPage = () => {
+>>>>>>> Stashed changes
   return (
     <>
       <OnboardingModal />
@@ -31,6 +38,9 @@ const LandingPage = () => {
             <Title />
             <ChatBox />
           </div>
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
         </div>
       </div>
