@@ -9,7 +9,7 @@ import Title from '../../components/title-component/Title.jsx';
 const LandingPage = () => {
   return (
     <>
-      <OnboardingModal />
+      {/*<OnboardingModal />*/}
       <div className="landingpage_container">
         <Header />
         <div className="content_wrapper">
