@@ -1,30 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styles from './chatdisplay.module.css';
 
-function ChatDisplay() {
-  const [messages] = useState([
-    { content: 'Message Content', isUser: true },
-    { content: 'Message Content Chat', isUser: false },
-    { content: 'Message Content', isUser: true },
-    { content: 'Message Content Chat', isUser: false },
-    { content: 'Message Content', isUser: true },
-    { content: 'Message Content Chat', isUser: false },
-    { content: 'Message Content', isUser: true },
-    { content: 'Message Content Chat', isUser: false },
-    { content: 'Message Content', isUser: true },
-    { content: 'Message Content Chat', isUser: false },
-    { content: 'Message Content', isUser: true },
-    { content: 'Message Content Chat', isUser: false },
-    { content: 'Message Content', isUser: true },
-    { content: 'Message Content Chat', isUser: false },
-    { content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sed quasi, ad aut debitis, at obcaecati tempore, placeat libero adipisci temporibus nihil incidunt reiciendis. Inventore pariatur facere eius fuga sed!', isUser: true },
-    { content: 'Message Content Chat', isUser: false },
+import axios from 'axios'
+import { UserContext } from '../../App.jsx'
 
-  ]);
+function ChatDisplay() {
+	const { user, setUser, messages, setMessages } = useContext(UserContext);
+
+	useEffect(() => { 
+		async function fetchMessages() {
+			try {
+				const response = await axios.get(`https://reviewless-mallie-conchal.ngrok-free.dev/comment?user_id=${user.uid}`);
+				const refactoredData = response.data
+  					.map(({ from_user, ...rest }) => ({
+  					  	isUser: from_user,
+  					  	...rest
+  				}))
+  				.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+				setMessages(refactoredData);
+			} catch (error) { console.error(error) }
+		}
+	
+		fetchMessages();
+	}, []);
 
   return (
-    <div className={styles.chat_display_container}>
-      {messages.map((message, index) => (
+	<div className={styles.chat_display_container}>
+		{messages?.map((message, index) => (
         <div
           key={index}
           className={`${styles.message} ${
@@ -34,7 +36,7 @@ function ChatDisplay() {
           {message.content}
         </div>
       ))}
-    </div>
+    </div>	
   );
 }
 

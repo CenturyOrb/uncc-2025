@@ -1,3 +1,4 @@
+import { createContext, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MainLayout from './MainLayout';
 import NoLayout from './NoLayout';
@@ -6,8 +7,14 @@ import LandingPage from './pages/landing-page/LandingPage';
 import Dashboard from './pages/dashboard/Dashboard';
 import Header from './components/header/Header';
 
+export const UserContext = createContext();
+
 function App() {
+	const [user, setUser] = useState(null);
+	const [messages, setMessages] = useState([]);
+	
   	return (
+	<UserContext.Provider value={{user, setUser, messages, setMessages}}> 
 	<BrowserRouter>
       	<Routes>
         	<Route element={<NoLayout />}>
@@ -16,6 +23,7 @@ function App() {
         	</Route>
 		</Routes>
     </BrowserRouter>		
+	</UserContext.Provider >
   	);
 }
 

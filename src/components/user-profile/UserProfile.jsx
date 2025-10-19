@@ -1,23 +1,31 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import styles from './userprofile.module.css'
 import bob from '../../assets/bobross.jpeg'
 import { FiArrowUp } from "react-icons/fi";
 
 import axios from 'axios'
+import { UserContext } from '../../App.jsx'
 
 const UserProfile = () => { 
-	const [userProfile, setUserProfile] = useState({});	
+	const { user, setUser } = useContext(UserContext);
+	const [userProfile, setUserProfile] = useState({
+    	auth_id: 'ex',
+    	user_name: "ex",
+    	upvote_count: 0,
+    	user_description: "ex"
+	});
 
 	useEffect(() => { 
 		// call backend for user info /users/:id
 		const fetchData = async () => {
       		try {
-        		const response = await axios(`https://reviewless-mallie-conchal.ngrok-free.dev/users/1AYFBciXLCgQqhFH7UlNMn5TMjn2`);
+        		const response = await axios(`https://reviewless-mallie-conchal.ngrok-free.dev/users/${user.uid}`);
 				setUserProfile(response.data.user);
     		} catch (error) {
     		    console.error('Error fetching data:', error);
     		}
     	};		
+
 		fetchData();
 	}, []);		
 	

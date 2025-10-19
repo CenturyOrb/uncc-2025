@@ -1,13 +1,39 @@
-import { useState } from 'react'
+import { useState, useEffect, useContext} from 'react'
 import styles from './sidebar.module.css'
 import { motion } from "motion/react"
 import { GoPerson } from "react-icons/go";
 
-const SideBar = ({navs, user}) => {
+import axios from 'axios'
+import { UserContext } from '../../App.jsx'
+
+const SideBar = ({navs}) => {
 	const [navData, setNavData] = useState(
 		navs.map((nav, index) => ({content: nav.content, highlighted: index === 0, icon: nav.icon}))
 	);
-	
+
+	const { user, setUser } = useContext(UserContext);
+    const [userProfile, setUserProfile] = useState({
+    	auth_id: 'ex',
+    	user_name: "ex",
+    	upvote_count: 0,
+    	user_description: "ex"
+    });
+
+	useEffect(() => {                                                                                              	
+    	// call backend for user info /users/:id
+    	const fetchData = async () => {
+      		try {
+        		const response = await axios(`https://reviewless-mallie-conchal.ngrok-free.dev/users/${user.uid}`);
+    			setUserProfile(response.data.user);
+    		} catch (error) {
+    		    console.error('Error fetching data:', error);
+    		}
+    	};		
+                                                                                                                    
+    	fetchData();
+    }, []);		
+
+    
 	const handleClick = (index) => { 
 		setNavData(prevNavData => prevNavData.map(data => {
 			return {...data, highlighted: !data.highlighted }
@@ -34,7 +60,7 @@ const SideBar = ({navs, user}) => {
 		</div>
 		<div className={`${styles.user_info} ${styles.highlighted}`}>
 			<GoPerson size={22}/>
-			{user}
+			{userProfile.user_name}
 		</div>
 	</section>
 	);

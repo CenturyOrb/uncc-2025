@@ -7,11 +7,18 @@
 }
 
 .bar { 
-	background-color: #A7C957;
 	height: 100%;
 	width: 0.5rem;
 	border-top-left-radius: 0.5rem;
 	border-bottom-left-radius: 0.5rem;
+}
+
+.green {
+	background-color: #A7C957;
+}
+
+.red {
+	background-color: rgb(188, 71, 73);
 }
 	
 .task_info { 

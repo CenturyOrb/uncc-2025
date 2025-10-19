@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useContext} from 'react'
 import styles from './assistantpanel.module.css'
 import { motion } from "motion/react"
 
@@ -6,49 +6,43 @@ import { GrCheckboxSelected } from "react-icons/gr";
 import { GrCheckbox } from "react-icons/gr";
 import TaskContainer from '../task-container/TaskContainer.jsx'
 
+import axios from 'axios'
+import { UserContext } from '../../App.jsx'
+
 const AssistantPanel = () => { 
-	const [tasks, setTasks] = useState([
-		{name: 'Learn HTML', 
-		methods: ['Audio', 'Text'],
-		status: GrCheckboxSelected
-		}, 
-		{name: 'Learn CSS', 
-		methods: ['Text'],
-		status: GrCheckbox
-		}, 
-		{name: 'Learn JS',
-		methods: ['Text', 'Video'],
-		status: GrCheckbox
-		},
-		{name: 'Learn React basics', 		
-        methods: ['Text'],
-		status: GrCheckbox
-        }, 
-		{name: 'First Reactjs Project!', 
-        methods: ['Text'],
-		status: GrCheckboxSelected
-        },
-		{name: 'Database?', 
-        methods: ['Text'],
-		status: GrCheckboxSelected
-        },
-		{name: 'Database?',       	
-        methods: ['Text'],
-        status: GrCheckboxSelected
-		},
-		{name: 'Database?', 
-        methods: ['Text'],
-        status: GrCheckboxSelected
-		},
-		{name: 'Database?',       		
-	    methods: ['Text'],
-        status: GrCheckboxSelected
-		},
-		{name: 'Database?',       		
-        methods: ['Text'],
-        status: GrCheckboxSelected
-        }
-	]);	
+	const [tasks, setTasks] = useState([]);	
+	const { user } = useContext(UserContext);
+
+	useEffect(() => { 
+		console.log(tasks);
+	}, [tasks]);
+
+	useEffect(() => {                                                                                              	
+    	// call backend for user info /tasks/:id
+    	const fetchData = async () => {
+      		try {
+        		const response = await axios(`https://reviewless-mallie-conchal.ngrok-free.dev/tasks?user_id=${user.uid}`);
+				const newTasks = response.data.map(item => {
+					const methods = [];
+				  	if (item.method_text) methods.push('text');
+				  	if (item.method_audio) methods.push('audio');
+				  	if (item.method_video) methods.push('video');
+				
+				  	return {
+				  	  task: item.task,
+				  	  methods: methods,
+					  complete: item.complete,
+				  	};
+				});
+
+				setTasks(newTasks);	
+    		} catch (error) {
+    		    console.error('Error fetching data:', error);
+    		}
+    	};		
+
+    	fetchData();
+    }, []);		
 
 	const week_display = [
 		{day: 'Sun', date: 19},
