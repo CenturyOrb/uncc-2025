@@ -1,0 +1,23 @@
+.markdownContainer {
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.markdownContainer h1,
+.markdownContainer h2,
+.markdownContainer h3 {
+  margin-top: 1em;
+}
+
+.markdownContainer code {
+  background: #eee;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.test { 
+	color: black;
+}
